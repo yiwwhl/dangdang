@@ -4,7 +4,8 @@
   "description": "",
   "main": "index.js",
   "scripts": {
-    "preinstall": "node ./scripts/preinstall.js"
+    "preinstall": "node ./scripts/preinstall.js",
+    "start:client": "pnpm -C ./packages/web dev"
   },
   "keywords": [],
   "author": "",
