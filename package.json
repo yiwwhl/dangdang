@@ -5,7 +5,8 @@
   "main": "index.js",
   "scripts": {
     "preinstall": "node ./scripts/preinstall.js",
-    "start:client": "pnpm -C ./packages/web dev"
+    "start:client": "pnpm -C ./packages/web dev",
+    "build:client": "pnpm -C ./packages/web build"
   },
   "keywords": [],
   "author": "",
