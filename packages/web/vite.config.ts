@@ -1,5 +1,6 @@
 import { defineConfig, UserConfig } from 'vite'
 import vue from '@vitejs/plugin-vue'
+import vueJsx from '@vitejs/plugin-vue-jsx'
 
 enum MODE {
   DEVELOPMENT = 'development',
@@ -24,7 +25,7 @@ const modeConfigMap: Record<MODE, UserConfig> = {
 export default defineConfig((configEnv) => {
   const mode = configEnv.mode
   return {
-    plugins: [vue()],
+    plugins: [vue(), vueJsx()],
     ...modeConfigMap[mode],
   }
 })

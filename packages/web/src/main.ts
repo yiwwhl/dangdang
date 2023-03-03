@@ -1,14 +1,6 @@
 import { createApp } from 'vue'
-import './style.css'
-import App from './App.vue'
+import App from './App'
 
-console.log('env', import.meta.env)
+const app = createApp(App)
 
-const testObj = {
-  name: 'hello',
-  age: 'world',
-}
-
-const res = Object.keys(testObj)
-
-createApp(App).mount('#app')
+app.mount('#app')

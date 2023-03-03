@@ -12,6 +12,7 @@
     "preview": "vite preview"
   },
   "dependencies": {
+    "@vitejs/plugin-vue-jsx": "^3.0.0",
     "declare": "workspace:^1.0.0",
     "dotenv": "^16.0.3",
     "vue": "^3.2.45"
