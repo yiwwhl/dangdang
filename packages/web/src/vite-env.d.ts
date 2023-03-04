@@ -1,3 +1,3 @@
 /// <reference types="vite/client" />
-/// <reference types="iac/declare/expansion" />
-/// <reference types="iac/declare/heavyload" />
+/// <reference types="shared/declare/expansion" />
+/// <reference types="shared/declare/heavyload" />
