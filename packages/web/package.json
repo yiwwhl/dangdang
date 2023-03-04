@@ -14,8 +14,8 @@
   "dependencies": {
     "@vitejs/plugin-vue-jsx": "^3.0.0",
     "@vueuse/core": "^9.13.0",
-    "declare": "workspace:^1.0.0",
     "dotenv": "^16.0.3",
+    "iac": "workspace:^1.0.0",
     "vue": "^3.2.45"
   },
   "devDependencies": {
