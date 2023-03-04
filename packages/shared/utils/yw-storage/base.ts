@@ -23,7 +23,6 @@ export const setItem: BaseStorageFunctionType = (mode) => {
     if (checkKey(key)) return
     const existingValue = getExistingValue(key, mode)
     if (!existingValue) {
-      console.log('hi')
       window[mode].setItem(key, stringify(value))
     } else {
       window[mode].setItem(key, stringify(merge(existingValue, value)))

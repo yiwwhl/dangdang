@@ -12,11 +12,9 @@ function getImageAbsolutePath(module: GlobModuleType) {
 }
 function shouldStore() {
   const storeImages = getLocalItem(IMAGE_STORE_NAME)
+  if (!storeImages) return
   ImageCollector.imageStore = storeImages
-  return shouldLoadOnce(Object.keys(storeImages).length)
-}
-function shouldLoadOnce(size: number) {
-  return size > 0
+  return Object.keys(storeImages).length > 0
 }
 
 export class ImageCollector {
