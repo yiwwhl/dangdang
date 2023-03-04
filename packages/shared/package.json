@@ -3,5 +3,6 @@
   "version": "1.0.0",
   "description": "Project Infrastructure and Tools",
   "author": "yiwwhl",
-  "license": "ISC"
+  "license": "ISC",
+  "main": "index.ts"
 }
