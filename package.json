@@ -15,6 +15,7 @@
     "lodash": "^4.17.21"
   },
   "dependencies": {
-    "@types/lodash": "^4.14.191"
+    "@types/lodash": "^4.14.191",
+    "eslint": "^8.35.0"
   }
 }
