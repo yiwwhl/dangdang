@@ -10,7 +10,7 @@
     "dev": "vite --open",
     "build": "vue-tsc && vite build",
     "preview": "vite preview",
-    "lint": "eslint --ext .tsx --ext ts  src/"
+    "lint": "eslint --fix --ext .tsx,.ts,.js  src/"
   },
   "dependencies": {
     "@vitejs/plugin-vue-jsx": "^3.0.0",
