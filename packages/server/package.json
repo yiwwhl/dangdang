@@ -10,6 +10,6 @@
   "author": "",
   "license": "ISC",
   "dependencies": {
-    "iac": "workspace:^1.0.0"
+    "shared": "workspace:^1.0.0"
   }
 }

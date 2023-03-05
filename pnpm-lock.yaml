@@ -21,9 +21,9 @@ importers:
 
   packages/server:
     specifiers:
-      iac: workspace:^1.0.0
+      shared: workspace:^1.0.0
     dependencies:
-      iac: link:../iac
+      shared: link:../shared
 
   packages/shared:
     specifiers: {}
