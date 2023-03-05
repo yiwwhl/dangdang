@@ -4,12 +4,26 @@
   "description": "",
   "main": "index.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "dev": "nodemon --watch src/ -e ts --exec ts-node ./src/app.ts"
   },
   "keywords": [],
   "author": "",
   "license": "ISC",
   "dependencies": {
+    "@types/jsonwebtoken": "^9.0.1",
+    "@types/koa": "^2.13.5",
+    "@types/koa-json": "^2.0.20",
+    "@types/koa-router": "^7.4.4",
+    "jsonwebtoken": "^9.0.0",
+    "koa": "^2.14.1",
+    "koa-body": "^6.0.1",
+    "koa-json": "^2.0.2",
+    "koa-router": "^12.0.0",
+    "log4js": "^6.8.0",
+    "mysql": "^2.18.1",
+    "reflect-metadata": "^0.1.13",
+    "sequelize": "^6.29.0",
+    "sequelize-typescript": "^2.1.5",
     "shared": "workspace:^1.0.0"
   }
 }
