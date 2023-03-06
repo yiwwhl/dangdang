@@ -1,6 +1,7 @@
-import { defineConfig, UserConfig } from 'vite'
-import vue from '@vitejs/plugin-vue'
-import vueJsx from '@vitejs/plugin-vue-jsx'
+import { defineConfig, UserConfig } from 'vite';
+import vue from '@vitejs/plugin-vue';
+import vueJsx from '@vitejs/plugin-vue-jsx';
+import path from 'path';
 
 enum MODE {
   DEVELOPMENT = 'development',
@@ -20,12 +21,17 @@ const modeConfigMap: Record<MODE, UserConfig> = {
     },
   },
   [MODE.PRODUCTION]: {},
-}
+};
 
 export default defineConfig((configEnv) => {
-  const mode = configEnv.mode
+  const mode = configEnv.mode;
   return {
     plugins: [vue(), vueJsx()],
+    resolve: {
+      alias: {
+        '@': path.resolve(__dirname, 'src'),
+      },
+    },
     ...modeConfigMap[mode],
-  }
-})
+  };
+});
