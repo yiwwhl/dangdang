@@ -1,65 +1,15 @@
-import path from 'path';
-import fs from 'fs';
-import Router from 'koa-router';
+import { Context, Next } from 'koa';
+import koaBody from 'koa-body';
+import koaJson from 'koa-json';
+import { RouterLoader } from './RouterLoader';
 
-const ROOT_ROUTER_PREFIX = '/dangdang';
-
-function isDir(absPath: string) {
-  return fs.lstatSync(absPath).isDirectory();
+function routerAutoLoader() {
+  return async ({ app }: Context, next: Next) => {
+    app.use(RouterLoader.routerLoader.rootRouter.routes());
+    app.use(koaJson());
+    app.use(koaBody());
+    await next();
+  };
 }
 
-function isRouterModule(module: any): module is Router {
-  return module instanceof Router;
-}
-
-export class RouterLoader {
-  static routerLoader = new RouterLoader();
-
-  private constructor() {
-    this.startUp();
-  }
-
-  rootRouter = new Router();
-
-  routerAbsPathLake = new Set<string>();
-
-  startUp() {
-    const rootDirPath = path.join(process.cwd(), '/src/router');
-
-    this.routerAbsPathLake.clear();
-
-    this.setupRootRouter();
-
-    this.getRouterFiles(rootDirPath);
-
-    this.requireRouterInAbsPathLake();
-  }
-
-  getRouterFiles(dirPath: string) {
-    const filesInPath = fs.readdirSync(dirPath);
-    let absPath;
-    filesInPath.forEach((file) => {
-      absPath = `${dirPath}/${file}`;
-      if (isDir(absPath)) {
-        this.getRouterFiles(absPath);
-      } else {
-        this.routerAbsPathLake.add(absPath);
-      }
-    });
-  }
-
-  requireRouterInAbsPathLake() {
-    this.routerAbsPathLake.forEach((absPath) => {
-      const module = require(absPath).default;
-      if (isRouterModule(module)) {
-        this.rootRouter.use(module.routes(), module.allowedMethods());
-      }
-    });
-  }
-
-  setupRootRouter() {
-    this.rootRouter.prefix(ROOT_ROUTER_PREFIX);
-  }
-}
-
-export default RouterLoader.routerLoader;
+export default routerAutoLoader;
