@@ -3,7 +3,7 @@ import koaBody from 'koa-body';
 import koaJson from 'koa-json';
 import { RouterLoader } from './RouterLoader';
 
-function routerAutoLoader() {
+function RouterAutoLoader() {
   return async ({ app }: Context, next: Next) => {
     app.use(RouterLoader.routerLoader.rootRouter.routes());
     app.use(koaJson());
@@ -12,4 +12,4 @@ function routerAutoLoader() {
   };
 }
 
-export default routerAutoLoader;
+export default RouterAutoLoader;

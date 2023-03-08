@@ -15,7 +15,8 @@ router.post('/addUser', async (ctx) => {
 });
 
 router.get('/autoloader', async (ctx) => {
-  ctx.body = 'work';
+  const { temp }: any = {};
+  ctx.body = temp.error;
 });
 
 export default router;

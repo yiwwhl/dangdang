@@ -1,8 +1,10 @@
 import Koa from 'koa';
-import routerAutoLoader from './plugins/RouterLoader';
+import ExceptionProcessor from './plugins/ExceptionProcessor';
+import RouterAutoLoader from './plugins/RouterAutoLoader';
 
 const app = new Koa();
 
-app.use(routerAutoLoader());
+app.use(ExceptionProcessor());
+app.use(RouterAutoLoader());
 
 app.listen(6008);
