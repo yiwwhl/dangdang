@@ -1,6 +1,7 @@
 import path from 'path';
 import fs from 'fs';
 import Router from 'koa-router';
+import { createRouter } from '../../utils/RouterCreator';
 
 function isDir(absPath: string) {
   return fs.lstatSync(absPath).isDirectory();
@@ -21,7 +22,7 @@ export class RouterLoader {
     this.startUp();
   }
 
-  rootRouter = new Router();
+  rootRouter = createRouter();
 
   routerAbsPathLake = new Set<string>();
 

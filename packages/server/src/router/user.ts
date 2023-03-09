@@ -1,6 +1,7 @@
 import Router from 'koa-router';
+import { createRouter } from '../utils/RouterCreator';
 
-const router = new Router();
+const router = createRouter();
 
 router.prefix('/user');
 
@@ -15,8 +16,7 @@ router.post('/addUser', async (ctx) => {
 });
 
 router.get('/autoloader', async (ctx) => {
-  const { temp }: any = {};
-  ctx.body = temp.error;
+  ctx.body = ctx.success('测试', 'ok');
 });
 
 export default router;
