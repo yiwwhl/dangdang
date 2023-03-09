@@ -2,10 +2,14 @@ import koaBody from 'koa-body';
 import koaJson from 'koa-json';
 import { MiddleWareFn } from '../../server';
 import { RouterLoader } from './RouterLoader';
+import { RouterAutoLoaderOptions } from './type';
 
-function RouterAutoLoader(): MiddleWareFn {
+function RouterAutoLoader({ rootRouterPrefix }: RouterAutoLoaderOptions): MiddleWareFn {
+  const rootRouter = RouterLoader.routerLoader.rootRouter;
+  rootRouterPrefix && rootRouter.prefix(rootRouterPrefix);
+
   return async ({ app }, next) => {
-    app.use(RouterLoader.routerLoader.rootRouter.routes());
+    app.use(rootRouter.routes());
     app.use(koaJson());
     app.use(koaBody());
     await next();

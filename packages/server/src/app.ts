@@ -5,6 +5,10 @@ import RouterAutoLoader from './middlewares/RouterAutoLoader';
 const app = new Koa();
 
 app.use(ExceptionProcessor());
-app.use(RouterAutoLoader());
+app.use(
+  RouterAutoLoader({
+    rootRouterPrefix: '/dangdang',
+  })
+);
 
 app.listen(6008);

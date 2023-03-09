@@ -2,8 +2,6 @@ import path from 'path';
 import fs from 'fs';
 import Router from 'koa-router';
 
-const ROOT_ROUTER_PREFIX = '/dangdang';
-
 function isDir(absPath: string) {
   return fs.lstatSync(absPath).isDirectory();
 }
@@ -58,6 +56,6 @@ export class RouterLoader {
   }
 
   setupRootRouter() {
-    this.rootRouter.prefix(ROOT_ROUTER_PREFIX);
+    // none personalizations yet
   }
 }
