@@ -36,6 +36,7 @@ importers:
       sequelize: ^6.29.0
       sequelize-typescript: ^2.1.5
       shared: workspace:^1.0.0
+      typease: workspace:^1.0.0
     dependencies:
       '@types/jsonwebtoken': 9.0.1
       '@types/koa': 2.13.5
@@ -52,8 +53,12 @@ importers:
       sequelize: 6.29.0
       sequelize-typescript: 2.1.5_tvhiul3bvfjdekjyxtt4jfupmy
       shared: link:../shared
+      typease: link:../typease
 
   packages/shared:
+    specifiers: {}
+
+  packages/typease:
     specifiers: {}
 
   packages/web:
