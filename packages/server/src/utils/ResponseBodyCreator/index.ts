@@ -1,8 +1,4 @@
-// TODO: consider refactor: The generic enum should be managed globally
-enum ResponseCode {
-  SUCCESS = 200,
-  SERVERERROR = 500,
-}
+import { ResponseCode } from 'shared/declare/server/response/enum';
 
 class ResponseBodyCreator {
   private constructor() {}
