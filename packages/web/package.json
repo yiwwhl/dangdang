@@ -17,6 +17,7 @@
     "@vueuse/core": "^9.13.0",
     "dotenv": "^16.0.3",
     "shared": "workspace:^1.0.0",
+    "typease": "workspace:^1.0.0",
     "vue": "^3.2.45"
   },
   "devDependencies": {
