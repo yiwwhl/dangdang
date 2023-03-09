@@ -5,7 +5,7 @@ import { RouterLoader } from './RouterLoader';
 import { RouterAutoLoaderOptions } from './type';
 
 function RouterAutoLoader({ rootRouterPrefix }: RouterAutoLoaderOptions): MiddleWareFn {
-  const rootRouter = RouterLoader.routerLoader.rootRouter;
+  const rootRouter = RouterLoader.getRootRouter();
   rootRouterPrefix && rootRouter.prefix(rootRouterPrefix);
 
   return async ({ app }, next) => {

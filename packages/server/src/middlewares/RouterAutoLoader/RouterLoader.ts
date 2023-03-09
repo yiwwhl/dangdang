@@ -13,6 +13,10 @@ function isRouterModule(module: any): module is Router {
 export class RouterLoader {
   static routerLoader = new RouterLoader();
 
+  static getRootRouter() {
+    return this.routerLoader.rootRouter;
+  }
+
   private constructor() {
     this.startUp();
   }
