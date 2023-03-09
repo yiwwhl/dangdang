@@ -3,4 +3,4 @@
  */
 
 // The first letter should be capitalized
-declare type FirstLetterUppercase = `${Uppercase<string>}${string}`;
+declare type FirstLetterShouldBeCapitalized = `${Uppercase<string>}${string}`;
