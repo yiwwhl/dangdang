@@ -1,4 +1,3 @@
-import Router from 'koa-router';
 import { createRouter } from '../utils/RouterCreator';
 
 const router = createRouter();
