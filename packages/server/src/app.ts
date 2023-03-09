@@ -1,6 +1,6 @@
 import Koa from 'koa';
-import ExceptionProcessor from './plugins/ExceptionProcessor';
-import RouterAutoLoader from './plugins/RouterAutoLoader';
+import ExceptionProcessor from './middlewares/ExceptionProcessor';
+import RouterAutoLoader from './middlewares/RouterAutoLoader';
 
 const app = new Koa();
 
