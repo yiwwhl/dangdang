@@ -1,8 +1,7 @@
-import { createApp } from 'vue'
-import App from './App'
-import { ImageCollector } from './utils/ImageCollector'
+import { createApp } from 'vue';
+import App from './App';
+import { ImageAutoLoader } from './plugins/ImageAutoLoader';
 
-ImageCollector.collectAllImages()
-
-const app = createApp(App)
-app.mount('#app')
+const app = createApp(App);
+app.use(ImageAutoLoader());
+app.mount('#app');
