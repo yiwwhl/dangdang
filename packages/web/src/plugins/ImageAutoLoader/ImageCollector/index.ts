@@ -28,8 +28,6 @@ export class ImageCollector {
       eager: true,
     });
 
-    console.log('do', images_png);
-
     const images_jpg = import.meta.glob('@/assets/**/*.jpg', {
       eager: true,
     });
