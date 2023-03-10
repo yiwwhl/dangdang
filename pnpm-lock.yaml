@@ -5,6 +5,7 @@ importers:
   .:
     specifiers:
       '@types/lodash': ^4.14.191
+      '@types/node': ^18.15.0
       eslint: ^8.35.0
       lodash: ^4.17.21
       nodemon: ^2.0.21
@@ -12,9 +13,10 @@ importers:
       typescript: ^4.9.3
     dependencies:
       '@types/lodash': 4.14.191
+      '@types/node': 18.15.0
       eslint: 8.35.0
       nodemon: 2.0.21
-      ts-node: 10.9.1_typescript@4.9.5
+      ts-node: 10.9.1_lwgqdwokjtwlohdqtbb6s252kq
       typescript: 4.9.5
     devDependencies:
       lodash: 4.17.21
@@ -831,6 +833,10 @@ packages:
 
   /@types/node/18.14.6:
     resolution: {integrity: sha512-93+VvleD3mXwlLI/xASjw0FzKcwzl3OdTCzm1LaRfqgS21gfFtK3zDXM5Op9TeeMsJVOaJ2VRDpT9q4Y3d0AvA==}
+    dev: false
+
+  /@types/node/18.15.0:
+    resolution: {integrity: sha512-z6nr0TTEOBGkzLGmbypWOGnpSpSIBorEhC4L+4HeQ2iezKCi4f77kyslRwvHeNitymGQ+oFyIWGP96l/DPSV9w==}
     dev: false
 
   /@types/qs/6.9.7:
@@ -2874,7 +2880,7 @@ packages:
       nopt: 1.0.10
     dev: false
 
-  /ts-node/10.9.1_typescript@4.9.5:
+  /ts-node/10.9.1_lwgqdwokjtwlohdqtbb6s252kq:
     resolution: {integrity: sha512-NtVysVPkxxrwFGUUxGYhfux8k78pQB3JqYBXlLRZgdGUqTO5wU/UyHop5p70iEbGhB7q5KmiZiU0Y3KlJrScEw==}
     hasBin: true
     peerDependencies:
@@ -2893,6 +2899,7 @@ packages:
       '@tsconfig/node12': 1.0.11
       '@tsconfig/node14': 1.0.3
       '@tsconfig/node16': 1.0.3
+      '@types/node': 18.15.0
       acorn: 8.8.2
       acorn-walk: 8.2.0
       arg: 4.1.3

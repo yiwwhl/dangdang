@@ -1,4 +1,4 @@
-import { ResponseCode } from 'shared/declare/server/response/enum';
+import { ResponseCode } from 'shared/declare/enum';
 
 class ResponseBodyCreator {
   private constructor() {}

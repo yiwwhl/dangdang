@@ -4,5 +4,8 @@
   "description": "Project Infrastructure and Tools",
   "author": "yiwwhl",
   "license": "ISC",
-  "main": "index.ts"
+  "main": "index.ts",
+  "scripts": {
+    "build:declare": "ts-node ./build/declare.ts"
+  }
 }
