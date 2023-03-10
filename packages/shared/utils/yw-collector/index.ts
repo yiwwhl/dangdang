@@ -25,6 +25,13 @@ class YwCollector {
     return fs.readFileSync(asbPath);
   }
 
+  // happy path
+  getFileModule(absPath: string, mode = 'esm') {
+    if (mode === 'esm') {
+      return require(absPath).default;
+    }
+  }
+
   setFileContent(absPath: string, content: any) {
     fs.writeFileSync(absPath, content);
   }

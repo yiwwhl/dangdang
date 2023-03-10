@@ -37,7 +37,7 @@ export class RouterLoader {
 
   requireRouterInAbsPathLake() {
     this.collector.fileAbsPathLake.forEach((absPath) => {
-      const module = require(absPath).default;
+      const module = this.collector.getFileModule(absPath);
       if (isRouterModule(module)) {
         this.rootRouter.use(module.routes(), module.allowedMethods());
       }
