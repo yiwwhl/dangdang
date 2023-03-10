@@ -9,7 +9,7 @@ function isDirectory(absPath: string) {
   return fs.lstatSync(absPath).isDirectory();
 }
 
-class YwCollector {
+export class YwCollector {
   fileAbsPathLake = new Set<string>();
 
   getFilesInDirPath(dirPath: string) {
@@ -48,4 +48,6 @@ class YwCollector {
   }
 }
 
-export default YwCollector;
+export default function createYwCollector() {
+  return new YwCollector();
+}

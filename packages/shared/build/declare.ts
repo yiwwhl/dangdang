@@ -2,7 +2,7 @@
 
 // TODO: consider refactor
 
-import YwCollector from '../utils/yw-collector/index';
+import createYwCollector from '../utils/yw-collector/index';
 
 export enum FileType {
   TS = '.ts',
@@ -11,7 +11,7 @@ export enum FileType {
 
 type FileTypeToAbsPath = Record<FileType, string[]>;
 
-const collector = new YwCollector();
+const collector = createYwCollector();
 
 const rootTsFileAbsPath = process.cwd() + '/declare/enum.ts';
 const rootDTsFileAbsPath = process.cwd() + '/declare/index.d.ts';

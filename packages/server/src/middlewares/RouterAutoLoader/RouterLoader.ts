@@ -2,7 +2,7 @@ import path from 'path';
 import fs from 'fs';
 import Router from 'koa-router';
 import { createRouter } from '../../utils/RouterCreator';
-import YwCollector from 'shared/utils/yw-collector';
+import createYwCollector from 'shared/utils/yw-collector';
 
 function isRouterModule(module: any): module is Router {
   return module instanceof Router;
@@ -21,7 +21,7 @@ export class RouterLoader {
 
   rootRouter = createRouter();
 
-  collector = new YwCollector();
+  collector = createYwCollector();
 
   startUp() {
     const rootRooterDirPath = path.join(process.cwd(), '/src/router');
