@@ -2,6 +2,4 @@ node_modules/
 .DS_Store
 .history
 .idea
-yarn.error
-lerna-debug.log
 .eslintcache
