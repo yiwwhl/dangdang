@@ -1,4 +1,4 @@
-import { ImageCollector } from '@/utils/ImageCollector';
+import { ImageCollector } from '@/plugins/ImageAutoLoader/ImageCollector';
 
 export function ImageAutoLoader() {
   return {

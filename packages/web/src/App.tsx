@@ -1,6 +1,6 @@
-import { defineComponent } from 'vue'
-import HelloWorld from './components/HelloWorld'
-import { getImage } from './utils/ImageCollector'
+import { defineComponent } from 'vue';
+import HelloWorld from './components/HelloWorld';
+import { getImage } from './plugins/ImageAutoLoader/ImageCollector';
 
 export default defineComponent({
   setup() {
@@ -11,7 +11,7 @@ export default defineComponent({
           <HelloWorld />
           <img src={getImage('adv')} alt="" />
         </>
-      )
-    }
+      );
+    };
   },
-})
+});

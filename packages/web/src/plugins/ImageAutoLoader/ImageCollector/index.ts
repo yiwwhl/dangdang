@@ -24,10 +24,13 @@ export class ImageCollector {
     // TODO: happy path. consider refactor
     if (isCacheHits()) return;
 
-    const images_png = import.meta.glob('../../assets/**/*.png', {
+    const images_png = import.meta.glob('@/assets/**/*.png', {
       eager: true,
     });
-    const images_jpg = import.meta.glob('../../assets/**/*.jpg', {
+
+    console.log('do', images_png);
+
+    const images_jpg = import.meta.glob('@/assets/**/*.jpg', {
       eager: true,
     });
 
