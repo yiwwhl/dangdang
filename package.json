@@ -7,7 +7,8 @@
     "preinstall": "node ./scripts/preinstall.js",
     "start:client": "pnpm -C ./packages/web dev",
     "build:client": "pnpm -C ./packages/web build",
-    "start:server": "pnpm -C ./packages/server dev"
+    "start:server": "pnpm -C ./packages/server dev",
+    "build:shared:declare": "pnpm -C ./packages/shared build:declare"
   },
   "keywords": [],
   "author": "",
