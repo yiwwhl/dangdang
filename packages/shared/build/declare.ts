@@ -1,3 +1,7 @@
+// happy path
+
+// TODO: consider refactor
+
 import YwCollector from '../utils/yw-collector/index';
 
 export enum FileType {
