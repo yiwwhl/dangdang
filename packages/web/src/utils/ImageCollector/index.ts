@@ -10,7 +10,7 @@ function getImageName(name: string) {
 function getImageAbsolutePath(module: GlobModuleType) {
   return module.default;
 }
-function shouldStore() {
+function isCacheHits() {
   const storeImages = getLocalItem(IMAGE_STORE_NAME);
   if (!storeImages) return;
   ImageCollector.imageStore = storeImages;
@@ -22,7 +22,7 @@ export class ImageCollector {
 
   static collectAllImages() {
     // TODO: happy path. consider refactor
-    if (shouldStore()) return;
+    if (isCacheHits()) return;
 
     const images_png = import.meta.glob('../../assets/**/*.png', {
       eager: true,
