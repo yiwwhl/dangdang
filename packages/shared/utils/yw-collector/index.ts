@@ -18,6 +18,7 @@ class YwCollector {
         this.fileAbsPathLake.add(absPath);
       }
     });
+    return this.fileAbsPathLake;
   }
 
   getFileContent(asbPath: string) {

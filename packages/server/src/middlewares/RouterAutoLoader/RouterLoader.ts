@@ -2,10 +2,7 @@ import path from 'path';
 import fs from 'fs';
 import Router from 'koa-router';
 import { createRouter } from '../../utils/RouterCreator';
-
-function isDir(absPath: string) {
-  return fs.lstatSync(absPath).isDirectory();
-}
+import YwCollector from 'shared/utils/yw-collector';
 
 function isRouterModule(module: any): module is Router {
   return module instanceof Router;
@@ -24,43 +21,26 @@ export class RouterLoader {
 
   rootRouter = createRouter();
 
-  routerAbsPathLake = new Set<string>();
+  collector = new YwCollector();
 
   startUp() {
-    const rootDirPath = path.join(process.cwd(), '/src/router');
+    const rootRooterDirPath = path.join(process.cwd(), '/src/router');
 
-    this.routerAbsPathLake.clear();
-
-    this.setupRootRouter();
-
-    this.getRouterFiles(rootDirPath);
+    this.getRouterFiles(rootRooterDirPath);
 
     this.requireRouterInAbsPathLake();
   }
 
   getRouterFiles(dirPath: string) {
-    const filesInPath = fs.readdirSync(dirPath);
-    let absPath;
-    filesInPath.forEach((file) => {
-      absPath = `${dirPath}/${file}`;
-      if (isDir(absPath)) {
-        this.getRouterFiles(absPath);
-      } else {
-        this.routerAbsPathLake.add(absPath);
-      }
-    });
+    this.collector.getFilesInDirPath(dirPath);
   }
 
   requireRouterInAbsPathLake() {
-    this.routerAbsPathLake.forEach((absPath) => {
+    this.collector.fileAbsPathLake.forEach((absPath) => {
       const module = require(absPath).default;
       if (isRouterModule(module)) {
         this.rootRouter.use(module.routes(), module.allowedMethods());
       }
     });
-  }
-
-  setupRootRouter() {
-    // none personalizations yet
   }
 }
