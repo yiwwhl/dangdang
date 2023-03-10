@@ -1,5 +1,4 @@
 import path from 'path';
-import fs from 'fs';
 import Router from 'koa-router';
 import { createRouter } from '../../utils/RouterCreator';
 import createYwCollector from 'shared/utils/yw-collector';
