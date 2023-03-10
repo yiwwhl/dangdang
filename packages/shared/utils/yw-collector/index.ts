@@ -1,5 +1,10 @@
 import fs from 'fs';
 
+enum ModuleType {
+  ESM = 'esm',
+  CJS = 'cjs',
+}
+
 function isDirectory(absPath: string) {
   return fs.lstatSync(absPath).isDirectory();
 }
@@ -26,8 +31,8 @@ class YwCollector {
   }
 
   // happy path
-  getFileModule(absPath: string, mode = 'esm') {
-    if (mode === 'esm') {
+  getFileModule(absPath: string, moduleType: ModuleType = ModuleType.ESM) {
+    if (moduleType === ModuleType.ESM) {
       return require(absPath).default;
     }
   }
