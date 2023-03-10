@@ -1,6 +1,6 @@
 import fs from 'fs';
 
-function isDir(absPath: string) {
+function isDirectory(absPath: string) {
   return fs.lstatSync(absPath).isDirectory();
 }
 
@@ -12,7 +12,7 @@ class YwCollector {
     let absPath;
     filesInPath.forEach((file) => {
       absPath = `${dirPath}/${file}`;
-      if (isDir(absPath)) {
+      if (isDirectory(absPath)) {
         this.getFilesInDirPath(absPath);
       } else {
         this.fileAbsPathLake.add(absPath);
